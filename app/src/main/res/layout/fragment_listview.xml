@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/fragment_lv"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_height="match_parent"/>
+
+        <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_gravity=""
+            android:nestedScrollingEnabled="false"
+            android:layout_height="60dp"/>
+    </RelativeLayout>
+</ScrollView>

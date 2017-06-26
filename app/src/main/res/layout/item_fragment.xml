@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingLeft="12dp"
+    android:background="@color/white"
+    android:paddingRight="12dp"
+    android:paddingTop="8dp">
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="120dp"
+        android:src="@mipmap/item_img"
+        android:layout_height="100dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingLeft="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="标题标题标题标题"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/item_content"
+            android:layout_width="match_parent"
+            android:text="副标题副标题副标题副标题"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_time"
+            android:layout_width="match_parent"
+            android:text="59分钟前   30.3万阅"
+            android:layout_marginTop="28dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>
