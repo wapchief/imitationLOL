@@ -73,6 +73,9 @@ public class ScrollableActivity extends AppCompatActivity {
         initBanner();
         initTabLayout();
         initFragment();
+        title.setBackgroundColor(Color.argb((int) 150, 0, 0, 0));
+        titleBarTitle.setTextColor(Color.argb((int) 255, 198, 166, 102));
+        titleBarContent.setTextColor(Color.argb((int) 255,198,166,102));
         initOnClickScroll();
     }
 
