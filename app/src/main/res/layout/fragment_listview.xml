@@ -10,7 +10,7 @@
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:id="@+id/fragment_lv"
+            android:id="@+id/recyclerView"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:nestedScrollingEnabled="false"

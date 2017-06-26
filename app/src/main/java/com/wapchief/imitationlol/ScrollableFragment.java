@@ -3,14 +3,11 @@ package com.wapchief.imitationlol;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader;
 import com.cpoopc.scrollablelayoutlib.ScrollableHelper;
@@ -27,10 +24,10 @@ import butterknife.InjectView;
 
 public class ScrollableFragment extends Fragment implements ScrollableHelper.ScrollableContainer {
 
-    @InjectView(R.id.fragment_lv)
-    RecyclerView fragmentLv;
     @InjectView(R.id.header)
     RecyclerViewHeader header;
+    @InjectView(R.id.recyclerView)
+    RecyclerView recyclerView;
     private View view;
     List<MainBean> data = new ArrayList<>();
     MainBean bean;
@@ -59,7 +56,7 @@ public class ScrollableFragment extends Fragment implements ScrollableHelper.Scr
     private void initData() {
 
         for (int i = 0; i < 10; i++) {
-            data.add(i,bean);
+            data.add(i, bean);
         }
         adapter.notifyDataSetChanged();
     }
@@ -67,15 +64,13 @@ public class ScrollableFragment extends Fragment implements ScrollableHelper.Scr
     private void initAdapter() {
         View headerView = View.inflate(getContext(), R.layout.view_header, null);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        fragmentLv.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(layoutManager);
         header.addView(headerView);
-        header.attachTo(fragmentLv);
-        adapter = new FragmentAdapter(data,getActivity());
-
+        header.attachTo(recyclerView);
+        adapter = new FragmentAdapter(data, getActivity());
         //分割线
-        fragmentLv.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
-        fragmentLv.setAdapter(adapter);
-
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+        recyclerView.setAdapter(adapter);
     }
 
 
