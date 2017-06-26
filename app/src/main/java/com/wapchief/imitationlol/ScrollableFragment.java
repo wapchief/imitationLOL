@@ -79,15 +79,6 @@ public class ScrollableFragment extends Fragment implements ScrollableHelper.Scr
     }
 
 
-    public interface update{
-            public void uodata();
-    }
-
-    public void selectData(){
-        data.clear();
-        adapter.notifyDataSetChanged();
-    }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();

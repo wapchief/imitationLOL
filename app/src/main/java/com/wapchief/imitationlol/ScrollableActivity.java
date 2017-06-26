@@ -115,7 +115,6 @@ public class ScrollableActivity extends AppCompatActivity {
         fragmentList.add(fragment4);
         fragmentList.add(fragment5);
         fragmentList.add(fragment6);
-        scrollablelayout.getHelper().setCurrentScrollableContainer(fragment3);
         adapterVP = new ViewPagerAdapter(getSupportFragmentManager());
         vp.setAdapter(adapterVP);
         tab.setupWithViewPager(vp);
@@ -127,13 +126,9 @@ public class ScrollableActivity extends AppCompatActivity {
     /*初始化tab标签*/
     private void initTabLayout() {
 
-        tab.addTab(tab.newTab().setText(titles[0]));
-        tab.addTab(tab.newTab().setText(titles[1]));
-        tab.addTab(tab.newTab().setText(titles[2]));
-        tab.addTab(tab.newTab().setText(titles[3]));
-        tab.addTab(tab.newTab().setText(titles[4]));
-        tab.addTab(tab.newTab().setText(titles[5]));
-        tab.addTab(tab.newTab().setText(titles[6]));
+        for (int i=0;i<titles.length;i++){
+            tab.addTab(tab.newTab().setText(titles[i]));
+        }
 
     }
 
