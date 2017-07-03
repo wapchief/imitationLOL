@@ -2,15 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:paddingLeft="14dp"
     android:paddingTop="16dp"
     android:paddingRight="14dp"
     android:id="@+id/title"
     android:background="#00ffffff">
 
     <ImageView
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
         android:id="@+id/title_bar_back"
-        android:layout_width="30dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:src="@mipmap/ic_launcher_round"/>
 

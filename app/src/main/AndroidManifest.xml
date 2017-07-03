@@ -19,6 +19,10 @@
 
         </activity>
 
+        <activity android:name=".MeiTuanOrderActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
         <activity android:name=".ScrollableActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>

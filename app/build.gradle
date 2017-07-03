@@ -41,4 +41,7 @@ dependencies {
     compile 'com.github.cpoopc:scrollablelayoutlib:1.0.1'
     //RecyclerViewHeader
     compile 'com.bartoszlipinski:recyclerviewheader2:2.0.1'
+
+    compile 'com.sothree.slidinguppanel:library:3.3.1'
+
 }

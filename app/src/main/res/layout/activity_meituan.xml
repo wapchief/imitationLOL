@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoOverlay="true"
+        android:background="#00000000"
+        android:orientation="vertical"
+
+        sothree:umanoPanelHeight="68dp"
+        sothree:umanoShadowHeight="0dp">
+
+        <!-- MAIN CONTENT -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/title_bar"></include>
+
+            <TextView
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="Main Content"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#50000000"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+            <include layout="@layout/title_bar"></include>
+
+            <include layout="@layout/title_bar"></include>
+
+            <include layout="@layout/title_bar"></include>
+
+            <ScrollView
+                android:id="@+id/nestedScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:background="@color/white"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="@string/app_name" />
+                </LinearLayout>
+            </ScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>
