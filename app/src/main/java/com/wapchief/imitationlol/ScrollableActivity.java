@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -58,6 +61,8 @@ public class ScrollableActivity extends AppCompatActivity {
     TextView titleBarContent;
     @InjectView(R.id.header_title)
     RelativeLayout headerTitle;
+    @InjectView(R.id.srl)
+    SwipeRefreshLayout srl;
     private String[] titles = new String[]{"最新", "专栏", "官方", "活动", "攻略", "娱乐", "收藏"};
 
     List<Object> img = new ArrayList<>();
@@ -79,6 +84,7 @@ public class ScrollableActivity extends AppCompatActivity {
     }
 
     private void initView() {
+
         initBanner();
         initTabLayout();
         initFragment();
@@ -86,6 +92,21 @@ public class ScrollableActivity extends AppCompatActivity {
         titleBarTitle.setTextColor(Color.argb((int) 255, 198, 166, 102));
         titleBarContent.setTextColor(Color.argb((int) 255, 198, 166, 102));
         initOnClickScroll();
+        initSwipeRefresh();
+    }
+    /*刷新监听*/
+    private void initSwipeRefresh() {
+        srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                srl.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        srl.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
     }
 
     /*滚动监听*/
@@ -104,14 +125,14 @@ public class ScrollableActivity extends AppCompatActivity {
                         LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT);
 
-                lp.setMargins(0, (int) alphaTop,0,0);
+                lp.setMargins(0, (int) alphaTop, 0, 0);
 
-                    tab.setLayoutParams(lp);
+                tab.setLayoutParams(lp);
                 if (i == i1) {
 //                    title.setVisibility(View.GONE);
                     titleBarTitle.setText("动态列表");
                     titleBarTitle.setTextColor(Color.GREEN);
-                }else if (i<i1){
+                } else if (i < i1) {
                     titleBarTitle.setText("英雄联盟");
                     titleBarTitle.setTextColor(Color.argb((int) 255, 198, 166, 102));
                 }
@@ -127,11 +148,11 @@ public class ScrollableActivity extends AppCompatActivity {
 
 //                0-100递增偏移量
                 titleBarBack.scrollTo((int) alpha3, 0);
-                Log.e("aaa======", i+"    ,alpha:" + alpha + "     ,alpha2:" + alpha2 + "  ,alpha3:" + alpha3+"    ,alphaTop:"+alphaTop);
+                Log.e("aaa======", i + "    ,alpha:" + alpha + "     ,alpha2:" + alpha2 + "  ,alpha3:" + alpha3 + "    ,alphaTop:" + alphaTop);
 //                titleBarBack.setPadding((int) scale / i1 * 100, 12, 0, 8);
                 //通过距离设置渐变效果
                 title.setBackgroundColor(Color.argb((int) alpha2, 0, 0, 0));
-                titleBarTitle.setTextColor(Color.argb((int) alphaTv-1, 198, 166, 102));
+                titleBarTitle.setTextColor(Color.argb((int) alphaTv - 1, 198, 166, 102));
                 titleBarContent.setTextColor(Color.argb((int) alphaTv, 198, 166, 102));
 
             }
@@ -174,7 +195,7 @@ public class ScrollableActivity extends AppCompatActivity {
             headerTitle.setAnimation(mHiddenAction);
             headerTitle.setVisibility(View.GONE);
         }
-        if (i<450){
+        if (i < 450) {
             headerTitle.setAnimation(mShowAction);
             headerTitle.setVisibility(View.VISIBLE);
         }
