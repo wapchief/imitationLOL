@@ -1,6 +1,6 @@
 # imitationLOL，android仿掌上英雄联盟首页效果
 
-* 有两个分支，默认master，该分支下标题栏默认是不置顶的，header是recyclerView添加的。
+* 有两个分支，默认new，master不再更新。master分支下标题栏默认是不置顶的，header是recyclerView添加的。
 
 * 在新的分支new中，header是可悬浮的效果，在recycleview滑动一定距离后才隐藏，并且标题栏也修改为不滑出，总体上new分支下的界面更接近于掌上英雄联盟。
 
