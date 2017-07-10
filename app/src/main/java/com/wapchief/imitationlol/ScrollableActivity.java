@@ -63,6 +63,7 @@ public class ScrollableActivity extends AppCompatActivity {
     RelativeLayout headerTitle;
     @InjectView(R.id.srl)
     SwipeRefreshLayout srl;
+    ScrollableFragment fragment;
     private String[] titles = new String[]{"最新", "专栏", "官方", "活动", "攻略", "娱乐", "收藏"};
 
     List<Object> img = new ArrayList<>();
@@ -84,7 +85,6 @@ public class ScrollableActivity extends AppCompatActivity {
     }
 
     private void initView() {
-
         initBanner();
         initTabLayout();
         initFragment();
@@ -162,7 +162,7 @@ public class ScrollableActivity extends AppCompatActivity {
     /*初始化Fragment*/
     private void initFragment() {
 
-        ScrollableFragment fragment = new ScrollableFragment();
+        fragment = new ScrollableFragment();
         ScrollableFragment fragment1 = new ScrollableFragment();
         ScrollableFragment fragment2 = new ScrollableFragment();
         ScrollableFragment fragment3 = new ScrollableFragment();
@@ -190,7 +190,9 @@ public class ScrollableActivity extends AppCompatActivity {
     * */
 
     public void getonScroll(int i) {
-//        Log.e("activity======I:", "i:" + i);
+        Log.e("activity======I:", "i:" + i);
+        srl.setEnabled(i<450);
+
         if (i > 700) {
             headerTitle.setAnimation(mHiddenAction);
             headerTitle.setVisibility(View.GONE);
