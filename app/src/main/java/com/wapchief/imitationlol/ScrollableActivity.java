@@ -186,8 +186,7 @@ public class ScrollableActivity extends AppCompatActivity {
     /*通过Fragmenbt的滚动距离回调
     * 注意：这里只能处理当ScrollLayout完全隐藏后，Fragment的ScrollView才能开始滚动事件，
     * 上滑的时候却优先执行ScrollLayout的方法
-    *
-    * */
+     */
 
     public void getonScroll(int i) {
         Log.e("activity======I:", "i:" + i);
