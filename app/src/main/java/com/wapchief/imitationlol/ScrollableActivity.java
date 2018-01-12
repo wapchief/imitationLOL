@@ -61,8 +61,8 @@ public class ScrollableActivity extends AppCompatActivity {
     TextView titleBarContent;
     @InjectView(R.id.header_title)
     RelativeLayout headerTitle;
-    @InjectView(R.id.srl)
-    SwipeRefreshLayout srl;
+//    @InjectView(R.id.srl)
+//    SwipeRefreshLayout srl;
     ScrollableFragment fragment;
     private String[] titles = new String[]{"最新", "专栏", "官方", "活动", "攻略", "娱乐", "收藏"};
 
@@ -96,17 +96,17 @@ public class ScrollableActivity extends AppCompatActivity {
     }
     /*刷新监听*/
     private void initSwipeRefresh() {
-        srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                srl.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        srl.setRefreshing(false);
-                    }
-                }, 2000);
-            }
-        });
+//        srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                srl.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        srl.setRefreshing(false);
+//                    }
+//                }, 2000);
+//            }
+//        });
     }
 
     /*滚动监听*/
@@ -190,7 +190,7 @@ public class ScrollableActivity extends AppCompatActivity {
 
     public void getonScroll(int i) {
         Log.e("activity======I:", "i:" + i);
-        srl.setEnabled(i<450);
+//        srl.setEnabled(i<450);
 
         if (i > 700) {
             headerTitle.setAnimation(mHiddenAction);
