@@ -8,9 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:id="@+id/recyclerView"
+            android:id="@+id/recyclerViewF"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:nestedScrollingEnabled="false"

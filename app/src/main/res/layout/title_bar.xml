@@ -4,19 +4,19 @@
     android:layout_height="64dp"
     android:paddingTop="16dp"
     android:paddingRight="14dp"
-    android:id="@+id/title"
+    android:id="@+id/titleR"
     android:background="#00ffffff">
 
     <ImageView
         android:paddingTop="12dp"
         android:paddingBottom="8dp"
-        android:id="@+id/title_bar_back"
+        android:id="@+id/titleBarBack"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:src="@mipmap/ic_launcher_round"/>
 
     <TextView
-        android:id="@+id/title_bar_title"
+        android:id="@+id/titleBarTitle"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="英雄联盟"
@@ -27,7 +27,7 @@
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/title_bar_content"
+        android:id="@+id/titleBarContent"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="选项"

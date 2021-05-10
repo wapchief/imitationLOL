@@ -1,22 +1,19 @@
-package com.wapchief.imitationlol;
+package com.wapchief.imitationlol
 
 /**
  * Created by apple on 2017/6/23.
  */
-
-public class MainBean {
-    public String img;
-    public String title;
-    public String content;
-    public String time;
-
-    @Override
-    public String toString() {
+class MainBean {
+    var img: String? = null
+    var title: String? = null
+    var content: String? = null
+    var time: String? = null
+    override fun toString(): String {
         return "MainBean{" +
                 "img='" + img + '\'' +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", time='" + time + '\'' +
-                '}';
+                '}'
     }
 }
